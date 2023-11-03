@@ -1,9 +1,12 @@
 import express from 'express';
-import { listProducts, createCategory } from '../products/products.controller.js'
+import { listProducts, createCategory, listCategories, createProducts } from '../products/products.controller.js'
 const routes = express.Router();
 
 
 routes.post('/category',createCategory)
-routes.get('/list-products', listProducts);
+routes.get('/category', listCategories);
+
+routes.post('/productList', createProducts)
+routes.get('/productList', listProducts)
 
 export default routes;
