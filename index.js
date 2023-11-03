@@ -3,8 +3,8 @@ import express from 'express';
 import bodyParser from 'body-parser';
 //const userRoutes = require('./Routes/users');
 import { mongoConnect } from './utils/db.js';
-// import userRoutes from './routes/users.js';
-// import productRoutes from './routes/products.js';
+import userRoutes from './routes/users.js';
+import productRoutes from './routes/products.js';
 
 const app = express();
 

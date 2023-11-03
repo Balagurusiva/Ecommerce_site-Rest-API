@@ -1,6 +1,6 @@
 import { Validator } from 'node-input-validator';
 import compose from 'composable-middleware';
-import { sendRsp } from '../utlis/response.js';
+import { sendRsp } from '../utils/response.js';
 
 export const validation = validate => {
 
@@ -21,14 +21,13 @@ export const validation = validate => {
                     validationErrors[key] = errors[key].message;
                 });
                 
-               // return res.status(422).send({error: true, errorData: validationErrors});
-                return sendRsp(res, 422, "Unprocessable entitity", {}, {errorData: validationErrors});
+                 return sendRsp(res, 422, "Unprocessable entitity", {}, {errorData: validationErrors});
             }
 
             next();
         } catch (error) {
             console.log('validation error :: ', error);
-           // return res.status(500).send({error: true, errorData: "Something went wrong"});
+     
            return sendRsp(res, 500, "Something went wrong!");
         }
         

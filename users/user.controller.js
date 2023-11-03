@@ -1,4 +1,4 @@
-import { sendRsp } from "../utlis/response.js";
+import { sendRsp } from "../utils/response.js";
 import usersModel from "../models/users.model.js";
 import { isEmailEixts } from './user.service.js';
 
