@@ -1,10 +1,9 @@
-import { Validator } from 'node-input-validator';
-import compose from 'composable-middleware';
+import { Validator } from 'node-input-validator'; 
 import { sendRsp } from '../utils/response.js';
 
 export const validation = validate => {
 
-    return compose().use( async (req, res, next) => {
+    return  async (req, res, next) => {
         try {
             const validationRules = new Validator(req.body, validate);
 
@@ -32,5 +31,5 @@ export const validation = validate => {
         }
         
 
-    })
+    }
 }

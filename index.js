@@ -15,12 +15,12 @@ app.get('/', (req, res, next) => {
 });
 
 
-// app.use('/user', userRoutes);
-// app.use('/product', productRoutes);
+app.use('/user', userRoutes);
+app.use('/product', productRoutes);
 
-// app.use((req, res) => {
-//     res.send('<h1>Page Not Found!</h1>')
-// });
+app.use((req, res) => {
+    res.send('<h1>Page Not Found!</h1>')
+});
 
 mongoConnect();
 
