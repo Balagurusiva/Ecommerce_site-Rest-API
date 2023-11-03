@@ -3,23 +3,23 @@ import usersModel from "../models/users.model.js";
 import { isEmailEixts } from './user.service.js';
 
 export const userRegistration = async (req, res) => {
+
   try {
     console.log(req.body);
-
     const isEmailCheck = await isEmailEixts(req.body.email);
-
     if(isEmailCheck) return sendRsp(res, 409, "Email already taken", {}); 
-
     const userReg = await usersModel.create(req.body);
-
     if (!userReg) return sendRsp(res, 403, "Something went wrong");
-
     sendRsp(res, 200, "User Regsitered successfully");
-  } catch (error) {
+  } 
+  catch (error) {
     console.log("userRegistration Error :: ", error);
     return sendRsp(res, 500, "Something went wrong", {});
   }
+  
 };
+
+
 
 export const userList = (req, res) => {
   sendRsp(res, 200, "User Listed successfully");
