@@ -8,8 +8,9 @@ const productSchema = new Schema({
         required: true
     },
     product_cat_id: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User'
+        type:Schema.Types.ObjectId,
+        required:true,
+        ref: 'category'
     },
     product_price: {
         type: Number,
